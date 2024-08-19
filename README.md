@@ -29,7 +29,7 @@ On OSX, you can use Rancher Desktop to deploy a local K8S cluster
 ```shell
 $ helm install my-release oci://registry.hub.docker.com/onelans/tock --version 0.4.3 -f values.yaml
 ```
-    
+
 With `values.yaml` content:
 
 ```yaml
@@ -57,23 +57,23 @@ mongodb:
     repository: zcube/bitnami-compat-mongodb
     tag: 6.0.5
 ```
- Your can access Tock Studio at `http://tockstudio-my-release.rancher.localhost`
+You can access Tock Studio at `http://tockstudio-my-release.rancher.localhost`
 
 
 ### 2) Start this story
 
-Story is implemented in Kotlin, as a webhook server. It well be available at `http://localhost:8887`
+Story is implemented in Kotlin, as a webhook server. It will be available at `http://localhost:8887`
 ```shell
 $ make start
 ```
 
-### 3) configure tock to use this story
+### 3) Configure tock to use this story
 
-Edit your bot setting to use this stories implementation as webhook
+Edit your bot setting to use this story implementation as webhook
 
-Sample if tock is running in rancher desktop k8s. Because rancher desktop is using a VM, you need to use `host.docker.internal` to access your local machine.
+Sample, if tock is running in rancher desktop k8s.   
 Webhook url : http://host.docker.internal:8887
-
+>Because rancher desktop is using a VM, you need to use `host.docker.internal` to access your local machine.
 
 ### 4) Enjoy with test cases
 
