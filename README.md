@@ -16,7 +16,7 @@ make start
 
 ## Use it
 
-### 1) deploy Tock via Helm chart
+### 1) deploy [Tock](https://github.com/theopenconversationkit/tock) via Helm chart
 
 You need a K8S cluster with Helm installed
 
@@ -62,10 +62,19 @@ You can access Tock Studio at `http://tockstudio-my-release.rancher.localhost`
 
 ### 2) Start this story
 
-Story is implemented in Kotlin, as a webhook server. It will be available at `http://localhost:8887`
+Story is implemented in Kotlin, as a webhook server(default) or as WebSocket Client. Webhook will be available at `http://localhost:8887`
 ```shell
 $ make start
 ```
+
+__Run as websocket client__
+
+If you want start Story as WebSocket client, you can set `TOCK_BOT_API_WEBSOCKET` to `true`. In its case, don't forget to set :
+- `TOCK_BOT_API_URL` to the websocket url of your tock instance. Default is localhost
+- `TOCK_BOT_API_KEY` to the api key of your tock instance
+- `TOCK_BOT_API_PORT` to the port of your tock instance. default is 8080
+- `TOCK_BOT_API_SSL` to true if your tock instance is using ssl
+
 
 ### 3) Configure tock to use this story
 
