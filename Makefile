@@ -9,6 +9,9 @@ tree:
 	mvn dependency:tree
 
 java-start:
+	java -jar target/basicStory-23.9.2-SNAPSHOT.jar
+
+java-start-assembly:
 	java -jar target/basicStory-23.9.2-SNAPSHOT-jar-with-dependencies.jar
 
 start:

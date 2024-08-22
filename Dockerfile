@@ -13,7 +13,7 @@ WORKDIR /app
 RUN groupadd -r appgroup && useradd -r -g appgroup appuser
 
 #COPY --from=build /app/target .
-COPY --from=build /app/target/basicStory-23.9.2-SNAPSHOT-jar-with-dependencies.jar .
+COPY --from=build /app/target/basicStory-23.9.2-SNAPSHOT.jar .
 
 # Set the owner of the application to the non-root user
 RUN chown -R appuser:appgroup /app
@@ -21,4 +21,4 @@ RUN chown -R appuser:appgroup /app
 # Switch to the non-root user
 USER appuser
 
-CMD ["java", "-jar", "basicStory-23.9.2-SNAPSHOT-jar-with-dependencies.jar"]
+CMD ["java", "-jar", "basicStory-23.9.2-SNAPSHOT.jar"]
